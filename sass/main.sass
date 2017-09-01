@@ -1,0 +1,534 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	margin: 0
+	padding: 0
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+li
+	list-style-type: none
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.my-container
+	margin: 0 165px
+	position: relative
+
+.myButton
+	background-color: $calm-color;
+	border-radius: 13px;
+	border: 0;
+	display: inline-block;
+	cursor: pointer;
+	color: $white-color;
+	font-size: 17px;
+	padding: 12px 31px;
+	text-decoration: none;
+	text-transform: uppercase;
+	&:active 
+		position: relative;
+		top: 1px;
+.roundButton
+	font-family: fontAwesome
+	color: $logo-color
+	font-size: 30px
+	padding: 0 20px
+	position: absolute
+	top: 65%
+	border: 2px solid $calm-color
+	border-radius: 50px
+	cursor: pointer
+
+.img-before
+	display: block
+	position: absolute
+	left: -55px
+	top: 3px
+
+// Header
+.header
+	width: 100%
+	height: 100%
+	position: relative
+	background-image: url('../img/first-screen/bg.jpg')
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	&:before
+		content: ""
+		width: 100%
+		height: 100%
+		position: absolute
+		background-color: rgba(#000,.7)
+	nav
+		padding-top: 30px
+		ul
+			&:first-child
+				float: left
+				font-family: $logo-font
+				color: $logo-color
+				font-size: 40px
+			&:last-child
+				float: right
+				li
+					display: inline-block
+					margin-right: 35px
+					a 
+						text-transform: capitalize
+						color: $white-color
+						font-size: 14.5px
+			li
+				list-style-type: none
+	
+	.header__slider
+		.wrapper
+			padding-top: 20%
+			text-align: center
+			position: relative
+			&:before
+				content: "\f104"
+				left: 0
+				@extend .roundButton
+			&:after
+				content: "\f105"
+				right: 0
+				@extend .roundButton
+
+			.h1
+				color: $white-color
+				font-family: $default-font-bold
+				font-size: 48px
+				margin: 0
+			.h3
+				color: $white-color
+				font-size: 25px
+				line-height: 0
+				margin-bottom: 90px
+		.white-dots
+			width: 100%
+			text-align: center
+			margin-top: 60px
+			ul
+				li 
+					list-style-type: none
+					display: inline-block
+					margin: 0 10px
+					a
+						color: $white-color
+						font-size: 10px
+				.active-dot
+					padding: 0 10px 2px 10px
+					border: 2px solid $white-color
+					border-radius: 25px
+					line-height: 25px
+// End Header Styles
+
+
+// WhatWeOffer Section
+.whatweoffer
+	&-header
+		text-align: center
+		padding: 80px 0 40px 0
+		&--h2
+			text-transform: uppercase
+			color: $calm-color
+			margin: 0
+			font-size: 35px
+	&-content
+		width: 100%
+		table
+			border-collapse: separate; 
+			border-spacing: 150px 100px;
+			tr
+				td
+					position: relative
+					h3
+						text-transform: uppercase
+			.first-line td
+				&:nth-child(2n+1):before
+					@extend .img-before
+					content: url('../img/second-screen/1-1.png')
+				&:nth-child(2n+2):before
+					@extend .img-before
+					content: url('../img/second-screen/2-1.png')
+			.second-line td
+				&:nth-child(2n+1):before
+					@extend .img-before
+					content: url('../img/second-screen/1-2.png')
+				&:nth-child(2n+2):before
+					@extend .img-before
+					content: url('../img/second-screen/2-2.png')						
+			.third-line td
+				&:nth-child(2n+1):before
+					@extend .img-before
+					content: url('../img/second-screen/1-3.png')
+				&:nth-child(2n+2):before
+					@extend .img-before
+					content: url('../img/second-screen/2-3.png')
+				
+
+					h3
+						font-family: $font-second-screen-content
+						text-transform: uppercase
+// End of WhatWeOffer Section
+
+// WhoWeAre Section
+
+.whoweare
+	width: 100%
+	height: 83%
+	position: relative
+	&__leftside
+		position: absolute
+		top: 0
+		left: 0
+		width: 50%
+		height: 100%
+		background-image: url("../img/third-screen/leftside-picture.png")
+		background-size: 100% 100%
+		background-repeat: no-repeat
+	
+	&__rightside
+		float: right
+		width: 50%
+		height: 100%
+		overflow-x: hidden
+		background-color: $logo-color
+		&-textarea
+			padding: 95px 0 0 80px
+			&--h2
+				@extend .whatweoffer-header--h2
+				margin-bottom: 40px
+				color: $white-color
+		& p
+			margin-bottom: 40px
+			width: 80%
+			color: $white-color
+		.myButton
+			background-color: $darkest-logo-color
+			border-radius: 3px
+// End of WhoWeAre Section
+
+// See Our Works Section
+
+.seeourworks
+	&__header
+		text-align: center
+		&--h2
+			margin-top: 100px
+			@extend .whatweoffer-header--h2
+			font-family: $default-font-bold
+		&--gear
+			font-size: 30px
+			display: inline-block
+			line-height: 20px
+			position: relative
+			color: $logo-color
+			margin-bottom: 30px
+			&:before, &:after
+				content: ""
+				width: 120px
+				height: 2px
+				top: 215%
+				position: absolute
+				display: inline-block
+				margin-top: -50px
+				background-color: $logo-color
+			&:before
+				left: -140px
+				
+			&:after
+				right: -140px
+		p:last-child
+			text-align: center
+			padding: 0 20% 50px 20%
+	&__nav
+		width: 100%
+		margin-top: 60px
+		margin-bottom: 50px
+		&--menu
+			text-align: center
+			& li
+				display: inline-block
+				margin: 0 40px
+				padding: 0 20px
+				border-radius: 7px
+				&:hover
+					background-color: $calm-color
+	&__portfolio-grid
+		width: 100%
+		.dib
+			display: inline-block
+			margin: 0
+			padding: 0
+			margin-left: -3.8px
+			margin-top: -8px
+		&__item
+			width: 25%
+			height: 358px
+			position: relative
+			img
+				width: 100%
+				height: 100%
+			&--hover
+				position: absolute
+				height: 100%
+				width: 100%
+				top: 0
+				left: 0
+				text-align: center
+				background-color: rgba($logo-color,.8)
+				opacity: 0
+				transition: all .5s
+				&:hover
+					opacity: 1
+					padding-top: 25%
+				p:nth-child(2)
+					color: $white-color
+					font-family: $default-font-bold
+				p:last-child
+					color: $white-color
+					font-weight: 100
+
+				i
+					color: $white-color
+					border: 1px solid $white-color
+					border-radius: 50px
+					padding: 10px
+					&:first-child
+						margin-bottom: 20px
+// End of See Our Works Section
+
+// Testimonial Section
+.testimonial
+	&__header
+		text-align: center
+		margin: 100px 0
+		p:last-child
+			font-size: 25px
+			color: $darkest-logo-color
+		&--h2
+			@extend .whatweoffer-header--h2
+			font-family: $default-font-bold
+			
+
+	figure
+		float: left
+		width: 50%
+		padding: 0 10% 0 10%
+		margin-bottom: 30px
+		p 
+			position: relative;
+			text-align: center;
+			background-color: $speech-bubble-color;
+			border: 8px solid $speech-bubble-color;
+			border-radius: 2px;
+			box-shadow: 2px 2px 4px $speech-bubble-color;
+			z-index: 1;
+			&:before 
+				content: '';
+				position: absolute;
+				z-index: -1;
+				left: 30px;
+				bottom: -30px
+				border: 25px solid;
+				border-color: $speech-bubble-color transparent transparent $speech-bubble-color;
+		figcaption
+			margin-top: 20px
+			margin-left: 60px
+			position: relative
+			&:before
+				content: url("../img/fifth-screen/men.png")
+				position: absolute
+				top: 5px
+				left: -55px
+	.grey-dots
+		text-align: center
+		margin-bottom: 50px
+		ul
+			li
+				display: inline-block
+				padding: 1px 2px
+				i
+					color: $testimonial-dots-color
+					font-size: 10px
+			& .active
+				border: 3px solid $calm-color
+				border-radius: 50px
+				line-height: 0
+				i 
+					color: $white-color
+
+// End of Testimonial Section
+
+// Footer
+.footer
+	background-color: $footer-color
+	padding-top: 70px
+	position: relative
+	height: 60%
+	li 
+		display: inline-block
+		margin-right: 30px
+	&__firstcol
+		float: left
+		color: $white-color
+		width: 22%
+		&--header
+			font-family: $logo-font
+			text-transform: capitalize
+			font-size: 25px
+			margin-bottom: 25px
+		&--content
+			color: rgba($white-color,.5)
+			font-size: 14px
+	&__secondcol
+		float: left
+		color: $white-color
+		width: 22%
+		&--header
+			text-transform: capitalize
+			margin-bottom: 30px
+			font-size: 22px
+		&--content
+			color: rgba($white-color,.5)
+			font-size: 14px
+		ul
+			display: flex
+			flex-direction: column
+			margin-top: 10px
+			li
+				&:first-child
+					i 
+						margin-right: 32px
+				i 
+					margin-right: 25px
+					color: $calm-color
+					font-size: 18px
+	&__thirdcol
+		overflow: hidden
+		@extend .footer__secondcol
+		&--header
+			@extend .footer__secondcol--header
+		&--content
+			@extend .footer__secondcol--content
+			p 
+				width: 95%
+				padding-left: 10%
+				position: relative
+				&:nth-child(odd):before
+					content: "\f099"
+					font-family: fontAwesome
+					font-size: 25px
+					color: $calm-color
+					position: absolute
+					left: 0
+					top: -5px
+				&:nth-child(even)
+					margin-bottom: 5px
+					a
+						text-transform: capitalize
+	&__fourthcol
+		@extend .footer__secondcol
+		&--header
+			@extend .footer__secondcol--header
+		&--content
+			@extend .footer__secondcol--content
+		&--input
+			margin-top: 30px
+			input
+				text-indent: 20px
+				color: $white-color
+				height: 35px
+				width: 70%
+				background-color: $made-by-color
+				line-height: 0px
+				border: none
+				border-top-left-radius: 5px
+				border-bottom-left-radius: 5px
+				&::-webkit-input-placeholder
+					color: $testimonial-dots-color
+					background: $made-by-color
+			span
+
+				button
+					background-color: $calm-color
+					border: $calm-color
+					font-size: 14px
+					padding: 5px 10px
+					line-height: 25px
+					border-top-right-radius: 5px
+					border-bottom-right-radius: 5px
+// end of Footer
+
+
+// Underfooter section
+.underfooter
+	position: relative
+	padding: 20px 0
+	background-color: $made-by-color
+	color: $testimonial-dots-color
+	& .block
+		&:nth-child(1)
+			position: absolute
+			left: 0
+		&:nth-child(2)
+			text-align: center
+		ul
+			position: absolute
+			right: 0
+			top: -5px
+			li
+				display: inline-block
+				margin: 0 5px
+				padding: 5px 10px
+				background-color: $underfooter-icon-color
+				color: $white-color
+				cursor: pointer
+				&:nth-child(2)
+					padding: 5px 12px
+				&:hover
+					background-color: $calm-color
+
+// End of Underfooter section
+
+
+
+@import "media" // Всегда в конце
+
